@@ -63,9 +63,13 @@
                                         <span class="badge bg-success">Новое</span>
                                         <i class="far fa-clock"></i>
                                         <span th:text="${#strings.substring(interview.createDate, 0, 10)}"></span>
+                                       <span th:each="profile: ${profiles}">
+                                    <span th:if="${interview.submitterId == profile.getId()}">
                                         <i class="far fa-user"></i>
-                                        <span>ФИО пользователя</span>
+                                        <span th:text="${profile.getUsername()}"></span>
                                     </span>
+                                </span>
+                                        </span>
                                 </div>
                             </td>
                         </tr>
